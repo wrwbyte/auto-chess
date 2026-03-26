@@ -1,1 +1,1 @@
-start_wave();
+//start_wave();

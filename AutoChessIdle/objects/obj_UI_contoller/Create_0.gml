@@ -1,3 +1,11 @@
+enum TileType {
+    NONE = 0,
+    SHOP = 1,
+    INVENTORY = 2,
+    GRID = 3,
+    ENEMY = 4
+}
+
 tile_size = 64;
 enemy_board_offset_x = 512;
 
@@ -10,7 +18,7 @@ for (var row = 0; row < 6; row++) {
             "Tiles",
             obj_tile
         );
-		tile.t_type = "grid";
+		tile.t_type = TileType.GRID;
     }
 }
 //Player Shop
@@ -21,7 +29,7 @@ for (var i = 0; i < 6; i++) {
         "Tiles",
         obj_tile
     );
-	tile.t_type = "shop";
+	tile.t_type = TileType.SHOP;
 }
 
 //Player Inventory
@@ -32,7 +40,7 @@ for (var i = 0; i < 10; i++) {
         "Tiles",
         obj_tile
     );
-	tile.t_type = "inv";
+	tile.t_type = TileType.INVENTORY;
 }
 //Enemy Grid
 for (var row = 0; row < 6; row++) {
@@ -44,7 +52,7 @@ for (var row = 0; row < 6; row++) {
             obj_tile
         );
 		
-		tile.t_type = "enemy";
+		tile.t_type = TileType.ENEMY;
 		tile.apply_style();
     }
 }

@@ -64,6 +64,7 @@
     {"id":{"name":"ps_health_end","path":"particles/ps_health_end/ps_health_end.yy",},},
     {"id":{"name":"ps_spark_damage","path":"particles/ps_spark_damage/ps_spark_damage.yy",},},
     {"id":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},},
+    {"id":{"name":"instance_exists_on_tile","path":"scripts/instance_exists_on_tile/instance_exists_on_tile.yy",},},
     {"id":{"name":"start_wave","path":"scripts/start_wave/start_wave.yy",},},
     {"id":{"name":"seq_lock","path":"sequences/seq_lock/seq_lock.yy",},},
     {"id":{"name":"seq_pause","path":"sequences/seq_pause/seq_pause.yy",},},

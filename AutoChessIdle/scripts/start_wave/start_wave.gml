@@ -13,7 +13,7 @@ function start_wave(){
 	var enemy_tiles = array_create(0);
 	for (var i = 0; i < instance_number(obj_tile); i++) { //Look at all the tiles
 		var t = instance_find(obj_tile, i); 
-		if (t.t_type == "enemy") { //For each enemy tile
+		if (t.t_type == TileType.ENEMY) { //For each enemy tile
 			array_push(enemy_tiles, t.id); //add to array
     }
 }
@@ -33,22 +33,15 @@ function start_wave(){
 	
 	//Populate shop
 	with (obj_tile) {
-    if (t_type = "shop") {
+    if (t_type = TileType.SHOP) {
 		show_debug_message("Spawning red unit on tile id: " + string(id) + " at (" + string(x) + "," + string(y) + ")");
         // Only spawn a unit if no unit is currently on this tile
-        if (!instance_exists_on_tile(obj_red, id)) {
+        if (!global.instance_exists_on_tile(obj_red, id)) {
             var red_unit = instance_create_layer(x, y, "Enemy", obj_red);//Spawn red guy
-            red_unit.placed_on_tile = id;
+            red_unit.tile_id = id;
+			red_unit.placed_on_tile = TileType.SHOP; // track tile type (SHOP, INVENTORY, GRID)
 			}
 		}
 	}
 }
 
-function instance_exists_on_tile(obj_type, tile_id) {
-    with (obj_type) {
-        if (placed_on_tile == tile_id) {
-            return true;
-        }
-    }
-    return false;
-}
